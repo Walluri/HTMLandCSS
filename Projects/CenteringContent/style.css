@@ -1,0 +1,51 @@
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "lato";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+    padding: 20px;
+}
+
+.content {
+    height: 95vh;
+    border: 1px solid red;
+    background-color: rgb(235, 227, 227);
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 75px;
+}
+
+.logo-text {
+position: absolute;
+left: 50%;
+top: 45%;
+transform: translate(-50%,-50%);
+text-transform: uppercase;
+}
+
+.logo-text-primary{
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-size: 300%;
+    letter-spacing: 44px;
+}
+
+.logo-text-secondary{
+    display: block;
+    font-weight: 400;
+    font-size: 200%;
+    letter-spacing: 17.4px;
+}
