@@ -1,0 +1,89 @@
+*{
+border:0;
+margin: 0;    
+box-sizing: border-box;
+}
+
+body{
+font-size: 16px;
+font-family: "sans-serif";
+font-weight: 400;
+line-height: 1.7;
+letter-spacing: 1px;
+padding: 30px;
+background-color: cornsilk;
+}
+
+.header{
+    height: 95vh;
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    left: 40%;
+    top: 40%;  
+    text-align: center;
+
+}
+
+.btn:link,
+.btn:visited {
+    display: inline-block;  
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: rgb(55, 170, 94);
+    padding: 15px 40px;
+    border-radius: 100px;
+    transition: transform .2s;
+    color:black;
+    position: relative;
+    animation-name: MoveButton;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+    animation-delay: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+ 
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    background-color: rgb(55, 170, 94);
+    width:100%;
+    height: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+    transition: all  0.4s;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.3) scaleY(1.7);
+    opacity: 0;       
+}
+
+@keyframes MoveButton{
+
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+}
