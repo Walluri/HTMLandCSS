@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+font-family: "lato";
+font-size: 16px;
+color: rgb(151, 99, 99);
+font-weight: 400;
+line-height: 1.7;
+padding: 20px;
+background-color:rgb(240, 235, 235);
+}
+
+header
+{
+    position: relative;
+    height: 95vh;
+}
+
+.intro
+{
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%,-50%);
+text-transform: uppercase;
+}
+
+
+.intro-title {
+    display: block;
+    line-height: 2;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    animation-name: MoveFromLeft;
+    animation-duration: 2s;
+}
+
+.intro-body {
+    display: block;
+    font-size: 25px;
+    font-weight: 300;
+    letter-spacing: 3.5px;
+}
+
+@keyframes MoveFromLeft
+{
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80%{
+        transform: translateX(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes MoveFromRight
+{
+    0% {
+
+    }
+
+    100% {
+
+    }
+}
