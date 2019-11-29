@@ -1,0 +1,36 @@
+body{
+    padding : 30px;
+}
+
+/* (0,0,1 class,0)*/
+.button{
+    font-size: 30px;
+    color : white;
+    background-color: blue;
+}
+/* (0,0,0,1 element)   
+ background-color: purple !important;
+ The above line will be given preference.*/
+a{
+    background-color: purple;
+}
+
+/*(0 inline, 1 nav id, pull-right and button classes 2,1 div element selector and one a element selector)*/
+#nav div.pull-right a.button{
+    background-color: black;
+}
+
+/*(0 inline, 1 nav id, 1 button and 1 hover pseudo class,1 a element selector)*/
+#nav a.button:hover{
+    background-color: yellow;
+}
+
+/*as the specificity of the 4th selector is low : it is not applied even though we hover
+so need increase the specificity of 4th selctor by adding 1 more class
+
+If you want the hover effect you have to make sure of two things..
+1- you must have the hover pseudo class in place
+2- it must have the highest specificity than the original one*/
+#nav div.pull-right a.button:hover{
+    background-color: grey;
+}
