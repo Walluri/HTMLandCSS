@@ -1,0 +1,11 @@
+<nav class="clearfix"> 
+  <ul class="navigation">
+    <li><a href="#">About Us</a> </li>
+    <li><a href="#">ABC</a> </li>
+    <li><a href="#">XYZ</a> </li>
+  </ul>
+  <div class="button">
+    <a class="btn-main"  href="#">Sign up</a>
+    <a class="btn-hot"  href="#">Get a quote</a>
+  </div>  
+</nav>  

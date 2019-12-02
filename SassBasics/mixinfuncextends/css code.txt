@@ -1,0 +1,162 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:inherit;
+}
+
+html{
+  font-size:10px;
+  box-sizing:border-box
+}
+
+$color-primary:yellow;
+$color-secondary:grey;
+$color-tertiary:blue;
+$color-text-dark :black;
+$width-button:150px;
+$color-text-light:#eee;
+
+/*
+Mixins : creating and using mixins*/
+@mixin clearfix{
+  &:after{
+    content:"";
+    clear:both;
+    display:table;
+  }  
+}
+
+/*
+Mixins : mixins with arguments*/
+@mixin style-link-text($col) {
+      text-decoration:none;
+      text-transform:uppercase;
+      color:$col;
+}
+
+/*
+FUNCTIONS:
+darken,lighten : These are functions we already know
+we pass something and the function performs some calculations/activity and then puts the result back.
+*/
+@function addNums($a,$b) {
+  @return $a+$b;
+}
+
+nav {
+  margin:3rem;
+  background-color:$color-primary;
+  font-size:1.6rem;
+  @include clearfix;
+    
+  /*
+  *** The below code can be put in a mixin and can be used to clear floats in the whole css document
+  &:after{
+    content:"";
+    clear:both;
+    display:table;
+  }*/
+}
+
+/*.clearfix:after{
+  content:"";
+  clear:both;
+  display:table;
+}*/
+
+
+
+.navigation {
+  list-style:none;
+  float:left;
+  
+  //.navigation li
+  li{
+    background-color:$color-secondary;
+    display:inline-block;
+    //margin-left:30px;
+    margin-left:addNums(10,20) *1px;  //Functions : note that we are getting a value and to convert to pixels we need to multiply by 1pixel
+   
+//.navigation li
+//Used & ->  .navigation li:first-child
+//If you have a pseudo class an Ampersand operator must be used
+//Not used & -> .navigation li :first-child
+    &:first-child {
+      margin-left:0;
+    }
+    &:last-child {
+      background-color:darken(grey,15);
+      border:1px solid red;
+    }
+    
+    //.navigation li a
+    a:link,
+    a:visited{
+      @include style-link-text($color-text-light); 
+      padding:10px;
+      display:inline-block;
+    }
+  }
+}
+
+
+.button{
+  float:right;
+  
+  /*&:after{
+    float:clear;
+  }*/
+}
+
+/*
+EXTENDS
+btn-main:link
+There are two places where the selector is written below, By using extends we shall get rid of one of the declaration.
+.btn-hot:link
+There are two places where the selector is written below, By using extends we shall get rid of one of the declaration.
+Note : The selector will be copied to the below code unlike mixins
+*/
+%btn-placeholder{
+  padding:10px;
+  display:inline-block;
+  text-align:center;
+  border-radius:100px;
+  width:$width-button;
+  @include style-link-text($color-text-dark); 
+}
+
+
+/*
+This code is totally removed : alternatively extends is used 
+btn-main:link,
+.btn-hot:link {
+  padding:10px;
+  display:inline-block;
+  text-align:center;
+  border-radius:100px;
+  width:$width-button;
+  @include style-link-text($color-text-dark); 
+}
+this code is totally removed*/
+
+.btn-main{
+  &:link{
+    @extend %btn-placeholder; //new line added
+    background-color:$color-secondary;
+  }
+  &:hover{
+    background-color:darken($color-secondary,15%);   /*   background-color:darken($color-secondary,15%);   //to make it 15 percent darker.  */
+  }
+} 
+
+.btn-hot{
+  &:link{
+    @extend %btn-placeholder; //new line added
+    background-color:lighten($color-tertiary,20);
+  }
+  &:hover{
+    background-color:lighten($color-tertiary,30%);
+  }
+}
+
+ 
