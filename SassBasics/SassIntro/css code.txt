@@ -1,0 +1,116 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:inherit;
+}
+
+html{
+  font-size:10px;
+  box-sizing:border-box
+}
+
+$color-primary:yellow;
+$color-secondary:grey;
+$color-tertiary:blue;
+$color-text-dark :black;
+$width-button:150px;
+$color-text-light:#eee;
+nav {
+  margin:3rem;
+  background-color:$color-primary;
+  font-size:1.6rem;
+  
+  &:after{
+    content:"";
+    clear:both;
+    display:table;
+  }
+  
+}
+
+/*.clearfix:after{
+  content:"";
+  clear:both;
+  display:table;
+}*/
+
+.navigation{
+  list-style:none;
+  float:left;
+  
+  //.navigation li
+  li{
+    background-color:$color-secondary;
+    display:inline-block;
+    margin-left:30px;
+   
+//.navigation li
+//Used & ->  .navigation li:first-child
+//If you have a pseudo class an Ampersand operator must be used
+//Not used & -> .navigation li :first-child
+    &:first-child{
+      margin-left:0;
+    }
+    &:last-child{
+      background-color:white;
+      border:1px solid red;
+    }
+    
+    //.navigation li a
+    a:link,
+    a:visited{
+      text-decoration:none;
+      text-transform:uppercase;
+      color:$color-text-dark;
+      padding:10px;
+      display:inline-block;
+    }
+  }
+}
+
+
+.button{
+  float:right;
+  
+  /*&:after{
+    float:clear;
+  }*/
+}
+
+.btn-main:link,
+.btn-hot:link {
+  padding:10px;
+  display:inline-block;
+  text-align:center;
+  border-radius:100px;
+  text-decoration:none;
+  text-transform:uppercase;
+  width:$width-button;
+  color:darken($color-text-light,10);
+}
+
+.btn-main{
+  &:link{
+    background-color:$color-secondary;
+  }
+  &:hover{
+    background-color:darken($color-secondary,15%);
+  }
+} 
+
+/*
+background-color:darken($color-secondary,15%);  
+//to make it 15 percent darker.
+*/
+
+.btn-hot{
+  &:link{
+    background-color:$color-tertiary;
+  }
+  &:hover{
+    background-color:lighten($color-tertiary,10%);
+  }
+} 
+
+
+
