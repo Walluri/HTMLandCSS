@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+/*
+Why is font -size 62.5 percent.
+1. Brower set the font size by default to 16px; 
+   So if font-size : 100% is mentioned in the body then it also gets 16 pixels.
+   Now further down in its children we use percentage of the root font size i.e rem.
+2. Now in a child element the font size of 1 rem = 16 pixels, 2rem = 32pixels.
+3. to normalize this we perrform the below calculation.
+     16 pixels = 100 percent font size.
+     10 pixels = ? how much percent ? = 62.5%
+     Now in children when we say 1.6 rem.
+*/
+html{
+    font-size: 62.5%;
+}
+
+body{    
+    font-family: sans-serif;
+    font-weight: 400;
+    padding: 10px;
+    color: #777;
+    background-color: antiquewhite;
+} 
