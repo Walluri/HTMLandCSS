@@ -1,0 +1,36 @@
+*,
+*::after,
+*:before {
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: sans-serif;
+  background-color: aquamarine;
+  box-sizing: border-box;
+  padding: 1rem;
+  font-size: 1.6rem; }
+
+.text-wrapper {
+  text-align: center;
+  margin-top: 5rem; }
+  .text-wrapper .text-data {
+    background-image: linear-gradient(to right, #c52222, #ac7d7d);
+    display: inline-block;
+    font-size: 3.5rem;
+    font-weight: 650;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    /* remove the background and keep it intact only below the text.. so the color will be just behind the text*/
+    color: transparent;
+    letter-spacing: 2px;
+    transition: all 0.1s; }
+    .text-wrapper .text-data:hover {
+      transform: skewX(2deg) skewY(7deg) scale(1.2);
+      /* rotate x y and then zoom*/
+      text-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.3);
+      /* to get a blur x y blurarea color of blur*/
+      backface-visibility: hidden;
+      /* to get a little smoothness*/ }

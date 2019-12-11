@@ -1,0 +1,17 @@
+*,
+*::after,
+*:before{
+box-sizing: inherit;
+}
+
+html{
+font-size:62.5%;
+}
+
+body {
+font-family: sans-serif;
+background-color: aquamarine;
+box-sizing: border-box;
+padding: 1rem;
+font-size: 1.6rem;
+}
