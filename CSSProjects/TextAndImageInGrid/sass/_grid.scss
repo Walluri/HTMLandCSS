@@ -1,0 +1,20 @@
+.row{
+    // border: 1px solid red;
+    max-width: $grid-width;
+    margin: 0 auto;
+
+    .col-1-of-2{
+        float : left;
+        // border: 2px solid blue;
+        // height: 10rem;
+         
+        &:not(:last-child){
+            margin-right: $gutter-horizontal;
+        }      
+
+        width : calc(  (100% - #{$gutter-horizontal})  /2 );
+        /*Notice the space in "100% - #"*/
+    }
+
+    @include clearfix;
+}
