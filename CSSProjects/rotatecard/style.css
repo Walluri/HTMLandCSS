@@ -1,0 +1,75 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  margin: 15px;
+  box-sizing: border-box;
+  font-family: sans-serif; }
+
+.card {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  position: relative;
+  height: 50rem;
+  perspective: 190rem;
+  margin-top: 5rem; }
+  .card__side {
+    height: 50rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: all 3s; }
+    .card__side--front {
+      background-image: linear-gradient(to right bottom, rgba(44, 219, 9, 0.589), rgba(152, 235, 136, 0.5));
+      text-align: center; }
+      .card__side--front img {
+        margin-top: 2rem;
+        border-radius: 50%; }
+      .card__side--front h2 {
+        margin: 4rem 0; }
+      .card__side--front h3 {
+        margin-bottom: 5rem; }
+      .card__side--front p {
+        padding: 0 15rem; }
+    .card__side--back {
+      background-image: linear-gradient(to right bottom, rgba(152, 235, 136, 0.5), rgba(44, 219, 9, 0.589));
+      transform: rotateY(-180deg); }
+      .card__side--back .icons-pack {
+        margin: 7rem 0 0 5rem; }
+        .card__side--back .icons-pack .icon {
+          z-index: 100;
+          font-size: 3rem; }
+          .card__side--back .icons-pack .icon i {
+            background-image: linear-gradient(to right bottom, rgba(83, 83, 83, 0.8), rgba(34, 34, 34, 0.589));
+            -webkit-background-clip: text;
+            color: transparent;
+            transition: all 0.2s; }
+            .card__side--back .icons-pack .icon i:hover {
+              transform: translateY(-0.2rem); }
+          .card__side--back .icons-pack .icon:not(:last-child) {
+            padding-bottom: 2.5rem; }
+  .card:hover .card__side--front {
+    transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0deg); }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row .col-1-of-1 {
+    float: left;
+    width: 60%;
+    margin-left: 20%; }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table; }
