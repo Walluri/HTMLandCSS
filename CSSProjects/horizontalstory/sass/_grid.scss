@@ -1,0 +1,11 @@
+.row {
+    max-width: $window-width;
+    font-size: 1.6rem;
+    border : 1px solid red;
+    @include clearfix;
+
+    .column {
+        float:left;
+    }
+}
+

@@ -1,0 +1,36 @@
+body{
+    background-color:rgba(208, 225, 245, 0.308)
+}
+
+.section-stories {
+    width: 90%;
+    height: 90vh;
+    margin : 3rem auto;
+    //border: 3px solid red;
+    border-radius: 0.5rem;
+    opacity: 0.5;
+    position: relative;    
+    overflow: hidden;
+
+    bg-video{
+        // min-width: 100%;
+        // min-height: 100%;
+
+        //The below lines of setting the width and height are to prevent the video from being stretched or squished.
+        // width:auto;
+        // height:auto;
+        
+        //center the content
+        position:absolute;        
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-70%);
+
+        
+        
+        //background-size: cover;
+    }
+
+}
+
+

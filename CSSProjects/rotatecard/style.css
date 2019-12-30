@@ -18,7 +18,7 @@ body {
   font-family: sans-serif;
   position: relative;
   height: 50rem;
-  perspective: 190rem;
+  perspective: 200rem;
   margin-top: 5rem; }
   .card__side {
     height: 50rem;

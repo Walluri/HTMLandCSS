@@ -1,0 +1,16 @@
+{
+  "name": "bganimationvideo",
+  "version": "1.0.0",
+  "description": "1. Create a background video filling the entire section - html video element + object fit property.",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss ./style.css -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

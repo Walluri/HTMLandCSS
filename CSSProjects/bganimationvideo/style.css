@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  background-color: rgba(208, 225, 245, 0.308); }
+
+.section-stories {
+  width: 90%;
+  height: 90vh;
+  margin: 3rem auto;
+  border-radius: 0.5rem;
+  opacity: 0.5;
+  position: relative;
+  overflow: hidden; }
+  .section-stories bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%); }
