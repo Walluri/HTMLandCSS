@@ -8,29 +8,126 @@ body{
     margin : 3rem auto;
     //border: 3px solid red;
     border-radius: 0.5rem;
-    opacity: 0.5;
+    //opacity: 0.8;
     position: relative;    
-    overflow: hidden;
+    overflow: hidden;    
 
-    bg-video{
-        // min-width: 100%;
-        // min-height: 100%;
+    .bg-video{
 
         //The below lines of setting the width and height are to prevent the video from being stretched or squished.
         // width:auto;
         // height:auto;
         
-        //center the content
+        // center the content
         position:absolute;        
         top:50%;
         left:50%;
-        transform: translate(-50%,-70%);
-
-        
-        
-        //background-size: cover;
+        transform: translate(-50%,-45%); 
+        z-index: -10;
+        opacity: 0.5;
+        object-fit: cover;
     }
 
+    .story
+    {
+        width : 75%;
+        margin : 0 auto;
+        padding: 3rem;
+        background-color: rgba(0, 0, 0, 0.736);
+        box-shadow: 0.4rem 0.7rem 0.9rem rgba(0,0,0,0.5);
+        //opacity: 0.9; 
+        border-radius: 0.2rem;
+        font-size: 1.9rem;
+        transform: skewX(-10deg);
+        position: relative;
+
+        @include clearfix;
+
+        &__shape{
+            transform: skewX(10deg);
+            width : 15rem;
+            height: 15rem;
+            //border: 3px solid blue;
+            float:left;
+            shape-outside: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            //z-index: 10;
+            //opacity: 1;
+            margin-right: 3rem; // this is for the space between the circle and text
+        }
+
+        &__img
+        {
+            width: 100%;
+            height: 100%;
+            transform: scale(1.3);
+            transition: 0.6s all;
+            backface-visibility: none;
+            object-fit:cover;
+            
+            // &:hover
+            // {
+            //     transform: scale(1);
+            //     filter:blur(2px) brightness(80%);
+            // }
+        }
+
+        &__caption
+        {
+            //position the text to the center of the shape
+            position: absolute;
+            top:45%;
+            left:35%;
+            transform: translate(-10%,-200%); 
+            transition: all 0.3s;
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-family: sans-serif;
+            opacity:1;
+
+        }
+
+        &__text{
+            transform: skewX(10deg);
+            padding-left: 8rem;
+            color:white;
+            font-weight: 400;
+            font-family: sans-serif;
+            font-size: 1.6rem;
+            //border:1px solid red;
+            //text-align: center;
+            letter-spacing: 0.1rem;
+            line-height: 2.5rem;;
+            margin-top: 1.2rem;;
+
+        }
+
+        // &:hover &__caption
+        // {
+        //     //opacity: 0;
+        //     transform: translate(0%,200%);
+        //     // top:50%;
+        //     // left:17%;            
+        // }
+    }
+
+}
+
+//the reason why this is written separately is there are hover effects on the image and the caption..
+// first the image zoom will take place and then the text will come down.. 
+//now if the mouse is on top of the text.. the image will zoom out and it wont have the hover effect.
+.story{
+
+    &:hover &__caption{
+        transform: translate(-20%,35%);
+        font-weight: 700;
+        font-size: 2.2rem;
+    }
+
+    &:hover &__img{
+        transform: scale(1);
+        filter:blur(2px) brightness(80%);
+    }
 }
 
 

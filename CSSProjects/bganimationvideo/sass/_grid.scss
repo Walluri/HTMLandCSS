@@ -1,13 +1,43 @@
-.row{
- width : 85%;
- margin : 0 auto;
- border: 2px solid red;
+.row 
+{
+    width : $max-width;
+    margin : 0 auto;
+    //border : 1px solid red;
+
+    @include clearfix;
+
+    //&:first-child
+    //{
+        //background-color: chocolate;
+        margin-top: $gutter-vertical*2.5;
+    //}
+
+    &:not(:last-child) 
+    {
+        margin-bottom: $gutter-vertical;
+    }
+
+    [class^="col-"] 
+    {
+        float : left;        
+        &:not(:last-child){
+            margin-right: $gutter-horizontal;
+        }
+        text-align: center;
+        //border : 2px solid blue;
+    }
+
+    .col-1-of-2
+    {
+        width:calc(    (100% - #{$gutter-horizontal}) / 2  );
+    }
+
+    .col-1-of-3
+    {
+        width:calc(    (100% - (2 * #{$gutter-horizontal}) ) / 3 );
+    }
+
 }
 
-.col-1-of-1{
 
-}
-
-.col-1-of-2{
-
-}
+ 
