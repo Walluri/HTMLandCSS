@@ -1,0 +1,53 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  padding: 2rem;
+  font-family: sans-serif;
+  background-color: grey; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  border: 1px dotted red; }
+
+.section-stories {
+  margin: 0 auto;
+  background-image: linear-gradient(to right bottom, #e2f8b9, #b7fa3a);
+  padding: 15rem 15rem;
+  border: 5px solid red; }
+  .section-stories-card {
+    height: 50rem;
+    background-image: linear-gradient(63deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 50%, rgba(125, 125, 125, 0) 100%), url(../images/3.jpg);
+    background-size: cover; }
+
+.form {
+  width: 55%;
+  padding: 10rem;
+  font-size: 2rem;
+  font-family: sans-serif;
+  letter-spacing: 0.1rem;
+  word-spacing: 1rem; }
+  .form__group {
+    margin: 2rem; }
+  .form__input {
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    color: darkgrey;
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-bottom: 0.3rem solid rgba(69, 133, 252, 0);
+    display: block; }
+  .form__label {
+    display: block;
+    margin-top: 1rem; }
