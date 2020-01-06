@@ -89,14 +89,16 @@ nav{
         display: flex;
         flex-direction: column;
         align-items: center;
-
         width : 40%;
         transform: translateX(100%);
-        transition: all 0.5s ease-in;
+        /* transition: all 0.5s ease-in; */
     }
 
     .nav-links li{
         opacity: 0;
+        transform: translateX(100px);
+        transition: all 2s ;
+        /*Show the list items with a slight delay*/
     }
 
     .burger{
@@ -106,10 +108,18 @@ nav{
     
 }
 
+/* When user clicks on the Hamburger */
+/*Show tha nav bar on the right*/
 .nav-active{
     transform: translateX(0%);
 }
- 
+
+/*Show the links with a slight delay*/
+.nav-links li.animateli{
+    opacity: 1;
+    transform: translateX(0px);    
+}
+
 @keyframes navLinkFade{
     from{
         opacity: 0;
@@ -121,15 +131,4 @@ nav{
         transform: translateX(0px);
     }
 }
-
-.toggle .line1{
-    transform: rotate(-45deg) translate(-5px,6px);
-}
-
-.toggle .line2{
-   opacity: 0;
-}
-
-.toggle .line3{
-    transform: rotate(45deg) translate(-5px,-6px);
-}
+ 
