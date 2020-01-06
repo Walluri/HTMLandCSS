@@ -91,14 +91,28 @@ nav{
         align-items: center;
         width : 40%;
         transform: translateX(100%);
-        /* transition: all 0.5s ease-in; */
+        transition: all 0.5s ease-in;
     }
 
-    .nav-links li{
+    .nav-links li:nth-child(1){
         opacity: 0;
         transform: translateX(100px);
-        transition: all 2s ;
-        /*Show the list items with a slight delay*/
+        transition: all 1s ;
+    }
+    .nav-links li:nth-child(2){
+        opacity: 0;
+        transform: translateX(130px);
+        transition: all 1.3s ;
+    }
+    .nav-links li:nth-child(3){
+        opacity: 0;
+        transform: translateX(160px);
+        transition: all 1.6s ;
+    }
+    .nav-links li:nth-child(4){
+        opacity: 0;
+        transform: translateX(190px);
+        transition: all 1.9s ;
     }
 
     .burger{
