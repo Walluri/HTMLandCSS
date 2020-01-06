@@ -60,7 +60,7 @@ nav{
     height:0.3rem;
     background-color: white;
     margin: 0.5rem;
-    transition: all 0.3s;
+    transition: all .5s;
 }
 
 
@@ -131,25 +131,12 @@ nav{
 }
 
 /*change the burger icon*/
-.ahider{
-    transform: translateY(5px) rotate(45deg);    
+.ahide{
+    transform: translateY(5px) rotate(45deg);
 }
-.bhider{
+.bhide{
     display:none;
 }
-.chider{
+.chide{
     transform: translateY(-4px) rotate(-45deg);
 }
-
-@keyframes navLinkFade{
-    from{
-        opacity: 0;
-        transform: translateX(5rem);
-    }
-
-    to{
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
- 

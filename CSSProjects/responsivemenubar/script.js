@@ -18,9 +18,9 @@ const navslide = ()=>{
         });
 
         //toggle the burger icon
-        line1.classList.toggle('ahider');
-        line2.classList.toggle('bhider');
-        line3.classList.toggle('chider');
+        line1.classList.toggle('ahide');
+        line2.classList.toggle('bhide');
+        line3.classList.toggle('chide');
         });
 }
 
