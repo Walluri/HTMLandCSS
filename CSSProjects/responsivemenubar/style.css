@@ -60,7 +60,9 @@ nav{
     height:0.3rem;
     background-color: white;
     margin: 0.5rem;
+    transition: all 0.3s;
 }
+
 
 @media screen and (max-width:1100px){
     .nav-links{
@@ -70,11 +72,6 @@ nav{
 
 @media screen and (max-width:768px)
 {
-   /* 
-    To move the vertical nav bar to the right  : transform: translateX(100%);
-    But a scroll bar will be visible in the bottom of the page,
-    and when you scroll we can still see the vertical nav bar.    
-    */
     body{
         overflow-x: hidden;
     }
@@ -91,26 +88,25 @@ nav{
         align-items: center;
         width : 40%;
         transform: translateX(100%);
-        transition: all 0.5s ease-in;
+        transition: all 0.5s ease-in;        
     }
 
-    .nav-links li:nth-child(1){
+    .nav-links li{
         opacity: 0;
+    }
+    .nav-links li:nth-child(1){        
         transform: translateX(100px);
         transition: all 1s ;
     }
     .nav-links li:nth-child(2){
-        opacity: 0;
         transform: translateX(130px);
         transition: all 1.3s ;
     }
     .nav-links li:nth-child(3){
-        opacity: 0;
         transform: translateX(160px);
         transition: all 1.6s ;
     }
     .nav-links li:nth-child(4){
-        opacity: 0;
         transform: translateX(190px);
         transition: all 1.9s ;
     }
@@ -132,6 +128,17 @@ nav{
 .nav-links li.animateli{
     opacity: 1;
     transform: translateX(0px);    
+}
+
+/*change the burger icon*/
+.ahider{
+    transform: translateY(5px) rotate(45deg);    
+}
+.bhider{
+    display:none;
+}
+.chider{
+    transform: translateY(-4px) rotate(-45deg);
 }
 
 @keyframes navLinkFade{
