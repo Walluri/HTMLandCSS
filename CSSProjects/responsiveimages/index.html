@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Images</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="responsive_image">
+         <!-- Under normal circumstances we use the below code 
+        <img class="img300" src="./img/300by300.jpg"/>-->
+        
+        <picture class="img300">
+            <!-- Density switching and Art direction done below : multipe source elements can be used 
+            for different widths-->
+            <source srcset="./img/150by150M.jpg 1x, ./img/300by300M.jpg 2x" media="(max-width:37.5em)">
+            <!-- Density switching done below -->
+            <img class="img300" srcset="./img/150by150.jpg 1x, ./img/300by300.jpg 2x"/>
+        </picture>
+
+    </div>
+</body>
+</html>
+
+<!-- This means that if the 
+: Width of screen is less than "37.5em/600px" + if the device pixel ration is "1.0" : 150by150M.jpg is served
+: Width of screen is less than "37.5em/600px" + if the device pixel ration is "2.0" : 300by300M.jpg is served
+
+: Width of screen greater than "37.5em/600px" + if the device pixel ration is "1.0" : 150by150.jpg is served
+: Width of screen greater than "37.5em/600px" + if the device pixel ration is "2.0" : 300by300.jpg is served -->
+
+
