@@ -6,5 +6,45 @@ This means that if you have a div of width 150pixels in you screen, If you have 
 2. Art direction : With this we want to tell the browser to use one image on a screen-width and another image for another screen width. Use html element <picture> and <source> element along with the <img> element.
  i.e we force the browser to use a particular image for a particular media query.
 
+
+
+<!-- This means that if the 
+: Width of screen is less than "37.5em/600px" + if the device pixel ration is "1.0" : 150by150M.jpg is served
+: Width of screen is less than "37.5em/600px" + if the device pixel ration is "2.0" : 300by300M.jpg is served
+
+: Width of screen greater than "37.5em/600px" + if the device pixel ration is "1.0" : 150by150.jpg is served
+: Width of screen greater than "37.5em/600px" + if the device pixel ration is "2.0" : 300by300.jpg is served -->
+
+    //Density switching and Art direction done below
+    <div class="responsive_image">
+         <!-- Under normal circumstances we use the below code 
+        <img class="img300" src="./img/300by300.jpg"/>-->
+        
+        <picture class="img300">
+            <!-- Density switching and Art direction done below : multipe source elements can be used 
+            for different widths-->
+            <source srcset="./img/150by150M.jpg 1x, ./img/300by300M.jpg 2x" media="(max-width:37.5em)">
+            <!-- Density switching done below -->
+            <img class="img300" srcset="./img/150by150.jpg 1x, ./img/300by300.jpg 2x"/>
+        </picture>
+    </div>
+
+
 3. Resolution switching : How to allow the browser to decide the best image (..for the current view-port and pixel density values) to download using the "srcset" attribute.
 
+        <!-- The browser does not have to know the width of the image to download it 
+             At the moment the browser knows its viewport width and display density
+             sizes attribute : This will inform the browser about the appox width ..
+                               ..of the image at different viewport widths
+                            
+             Now along with the width descriptor 'w' and the values of the sizes attirbute..
+                ..browser can then figure out the perfect image to use for the ..
+                .. current viewport width and the current dispaly resolution-->
+
+
+                           <!-- <div class=img_resswitching
+                img src=./img/rs/1000by500.jpg
+            </div> -->
+            <!-- Use the src attribute in the last, this is to make sure the image is 
+                displayed if the srcset and sizes attributes are not supported by the browser. 
+                700px is the default width if none of the other conditions apply-->

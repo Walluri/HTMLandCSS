@@ -8,27 +8,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="responsive_image">
-         <!-- Under normal circumstances we use the below code 
-        <img class="img300" src="./img/300by300.jpg"/>-->
-        
-        <picture class="img300">
-            <!-- Density switching and Art direction done below : multipe source elements can be used 
-            for different widths-->
-            <source srcset="./img/150by150M.jpg 1x, ./img/300by300M.jpg 2x" media="(max-width:37.5em)">
-            <!-- Density switching done below -->
-            <img class="img300" srcset="./img/150by150.jpg 1x, ./img/300by300.jpg 2x"/>
-        </picture>
-
+    <div class="responsive_image2">
+        <img srcset="./img/rs/500by500.jpg 500w, ./img/rs/800by500.jpg 800w, ./img/rs/1000by500.jpg 1000w"
+             sizes="(max-width:1200px) 90vw, (max-width:900px) 88vw, (max-width:600px) 83vw " 
+             class="img_resswitching" src="./img/rs/500by500.jpg">         
     </div>
 </body>
 </html>
-
-<!-- This means that if the 
-: Width of screen is less than "37.5em/600px" + if the device pixel ration is "1.0" : 150by150M.jpg is served
-: Width of screen is less than "37.5em/600px" + if the device pixel ration is "2.0" : 300by300M.jpg is served
-
-: Width of screen greater than "37.5em/600px" + if the device pixel ration is "1.0" : 150by150.jpg is served
-: Width of screen greater than "37.5em/600px" + if the device pixel ration is "2.0" : 300by300.jpg is served -->
-
-
