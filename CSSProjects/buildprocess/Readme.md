@@ -10,24 +10,23 @@ node-sass main.scss style.compiled.css
 
 ```bash
 concat -o style.concat.css ./style.compiled.css ./fontawesome/all.css
-```      
    After concating the below line can be commented in html
      <link rel="stylesheet" href="./fontawesome/all.css" >
+```      
 
-
-##    2. Concat CSS files to merge all css files
-
-```bash
-postcss --use autoprefixer -b \"last 10 versions\" ./style.concat.css -o ./style.prefix.css
-```
-
-##    3. Auto prefix
+##    3. Concat CSS files to merge all css files
 
 ```bash
 postcss --use autoprefixer -b \"last 10 versions\" ./style.concat.css -o ./style.prefix.css
 ```
 
-##   4.  Compress
+##    4. Auto prefix
+
+```bash
+postcss --use autoprefixer -b \"last 10 versions\" ./style.concat.css -o ./style.prefix.css
+```
+
+##   5.  Compress
 
 ```bash
 node-sass ./style.prefix.css style.css --output-style compressed
