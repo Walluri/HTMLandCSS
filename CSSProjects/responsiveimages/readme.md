@@ -1,3 +1,5 @@
+NOTE : If the browser wants to display 2 pixels of the image in 1pixel of the design : This will happen in high res screens.
+
 1. Density switching : serve a large version of an image for high resolution screen and a smaller version of the same image for a low density screen.
 
 1.1 High resolution screens use two physical pixels to display one pixel in our design.
@@ -29,6 +31,23 @@ This means that if you have a div of width 150pixels in you screen, If you have 
         </picture>
     </div>
 
+                ----- CSS code BEGIN
+
+                .responsive_image{
+                margin : 50px auto;
+                border: 1px solid red;
+                width : 152px;
+                height : 152px; 
+                }
+
+                .img300{ 
+                    width : 100%;
+                    height : 100%;
+                    background-size: cover;
+                }  
+
+
+                ----- CSS code END
 
 3. Resolution switching : How to allow the browser to decide the best image (..for the current view-port and pixel density values) to download using the "srcset" attribute.
 
@@ -48,3 +67,32 @@ This means that if you have a div of width 150pixels in you screen, If you have 
             <!-- Use the src attribute in the last, this is to make sure the image is 
                 displayed if the srcset and sizes attributes are not supported by the browser. 
                 700px is the default width if none of the other conditions apply-->
+3.1 Based on your break points the "sizes" attribute values must be properly defined.                
+
+        <img srcset="./img/rs/500by500.jpg 500w, ./img/rs/800by500.jpg 800w, ./img/rs/1000by500.jpg 1000w"
+            sizes="(max-width: 1000px) 80vw, (max-width: 500px) 80vw " 
+            class="img_resswitching" 
+            src="./img/rs/500by500.jpg" alt="default image"> 
+
+<!-- using srcset - we first tell the images we have and their widths.
+     using sizes - we tell the browser the width of the image at different breakpoints
+     and the browser will automatically decide what image to pull based on 'viewport width + pixel density'
+    
+    MY assumption is you can not say at what viewport width a particular image will be pulled.
+    This sounds like a more convinient way as - you just define what you have and leave the rest to the browser.
+
+ -->
+            ----- CSS code BEGIN
+
+            .responsive_image3{
+                max-width : 80%;
+                margin : 100px auto;
+            }
+
+            .img_resswitching{
+                max-width:100%;
+                max-height:100%;
+            }  
+
+
+            ----- CSS code END
