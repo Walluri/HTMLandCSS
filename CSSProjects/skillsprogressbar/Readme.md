@@ -1,0 +1,55 @@
+# 1. Show Progress bar when you hover.
+
+`
+.out{
+    width: 200px;
+    height:30px;
+    background-color: green($color: #000000);
+    margin : 100px auto;
+    border:1px solid red;
+    border-radius: 10px;
+    overflow: hidden;    
+    &:hover .in{
+        width:100%; 
+        transform: scaleY(1);
+    }
+}
+
+.in{
+    height:100%;
+    width:3px;
+    background-color: blue;;    
+    transform: scaleY(0);
+    transition: transform 0.3s, width 0.4s ease-in 0.35s;
+}
+`
+
+# 2. Show Progress bar when page loads.
+
+`
+.out{
+    width: 200px;
+    height:30px;
+    background-color: green($color: #000000);
+    margin : 100px auto;
+    border:1px solid red;
+}
+
+.in{
+    height:100%;
+    width:3px;
+    background-color: blue;
+    animation: animateheight 0.3s ease-in-out 0.5s 1 normal backwards,
+               animatewidth 0.3s ease-in-out 1s 1 normal forwards ;
+}
+
+@keyframes animateheight{
+    0%   {   transform: scaleY(0);   }
+    100% {   transform: scaleY(1);   }
+}
+
+@keyframes animatewidth{
+    0%      {       width:3px;     }
+    100%    {       width:100%;    }
+}
+`
