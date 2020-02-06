@@ -1,0 +1,18 @@
+.out {
+  width: 200px;
+  height: 30px;
+  background-color: 0;
+  margin: 100px auto;
+  border: 1px solid red;
+  border-radius: 10px;
+  overflow: hidden; }
+  .out:hover .in {
+    width: 100%;
+    transform: scaleY(1); }
+
+.in {
+  height: 100%;
+  width: 3px;
+  background-color: blue;
+  transform: scaleY(0);
+  transition: transform 0.3s, width 0.4s ease-in 0.35s; }

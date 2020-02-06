@@ -10,6 +10,7 @@ node-sass main.scss style.compiled.css
 
 ```bash
 concat -o style.concat.css ./style.compiled.css ./fontawesome/all.css
+
    After concating the below line can be commented in html
      <link rel="stylesheet" href="./fontawesome/all.css" >
 ```      
