@@ -4,7 +4,7 @@
   "description": "1. Density switching : serve a large version of an image for high resolution screen and a smaller version of the same image for a low density screen.",
   "main": "index.js",
   "dependencies": {
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "devDependencies": {},
   "scripts": {
